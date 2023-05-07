@@ -482,7 +482,9 @@ footer .navigasi {
 /* mobile view */
 
 @media (max-width: 450px) {
-  html {
+  html,
+  body {
+    overflow: hidden;
     font-size: smaller;
   }
 
@@ -491,7 +493,7 @@ footer .navigasi {
   .navbar {
     position: fixed;
     top: 0;
-    right: -100%;
+    right: 0;
     width: 80%;
     flex-direction: column;
     align-items: flex-start;
@@ -499,10 +501,11 @@ footer .navigasi {
     background-color: var(--dark);
     height: 100vh;
     transition: 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transform: translateX(100%);
   }
 
   .navbar.show {
-    right: 0;
+    transform: translateX(0);
   }
 
   .navbar a {
